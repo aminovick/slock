@@ -1,0 +1,120 @@
+/* Sementic colors */
+
+:root {
+  --color-primary: #623295;
+  --color-primary-strong: #4e2877;
+  --color-text-1: #222222;
+  --color-text-2: #999999;
+  --color-text-light: #ffffff;
+  --color-background-1: #ffffff;
+  --color-background-2: #f0f0f0;
+  --color-overlay: rgba(0, 0, 0, 0.1);
+  --color-border: #dddddd;
+  --color-border-strong: #cccccc;
+  --color-message-self: #266dca;
+  --color-message-others: #cee0f8;
+}
+
+/* Reset */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  position: relative;
+}
+
+/* App elements */
+
+body {
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--color-text-1);
+  background: var(--color-background-1);
+}
+
+/****** UNCOMMENT TO ENABLE FULL HEIGHT PAGE
+body {
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
+
+  > * {
+    flex: 1;
+  }
+  
+  #app {
+    display: flex;
+  
+    > * {
+      flex: 1;
+    }
+  }
+}
+******/
+
+/* Inputs and buttons */
+
+input[type=text] {
+  font-size: 1.1rem;
+  padding: 0.4rem 0.6rem;
+  background-color: var(--color-background-1);
+  border: 0.2rem solid var(--color-border);
+  border-radius: 0.4rem;
+  outline: none;
+
+  &:focus {
+    border-color: var(--color-border-strong);
+  }
+
+  &:disabled, &.disabled {
+    cursor: default;
+    opacity: 0.5;
+  }
+}
+
+.button-primary,
+.button-transparent {
+  font-size: 1.1rem;
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 0.4rem;
+  cursor: pointer;
+
+  &:disabled, &.disabled {
+    cursor: default;
+    opacity: 0.5;
+  }
+}
+
+.button-transparent {
+  background-color: transparent;
+
+  &:focus:not(:disabled), &:hover:not(:disabled) {
+    background-color: var(--color-overlay);
+  }
+}
+
+.button-primary {
+  color: var(--color-text-light);
+  background-color: var(--color-primary);
+
+  &:focus:not(:disabled), &:hover:not(:disabled) {
+    background-color: var(--color-primary-strong);
+  }
+}
+
+/* Placeholders */
+
+.placeholder-fullscreen {
+  color: var(--color-text-2);
+  font-size: 2rem;
+  // Center horizontally in container
+  text-align: center;
+  // Center vertically in container
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
